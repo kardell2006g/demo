@@ -1,0 +1,21 @@
+Do the following to run Dev Vault locally:
+
+CD to directory in CMD prompt:
+
+vault server –dev
+
+Note the Server info/token.
+
+Browse to http://127.0.0.1:8200/ui/vault/auth?with=token
+
+vault kv put secret/demo user=password aws=key
+vault get secret/demo
+
+
+vault secrets enable -path=aws aws
+
+vault write aws/config/root access_key=* secret_key=*
+
+Login with root token.
+
+http://127.0.0.1:8200/ui/vault/secrets/aws/create
